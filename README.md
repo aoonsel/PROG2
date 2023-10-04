@@ -22,5 +22,5 @@ Ich müsste somit alle Pflicht- und Wahlpflichtmodule den einzelnen Modulgruppen
 
 ![alt text](Übersciht Vollzeitstudium.png)
 
-[title](https://www.fhgr.ch/studium/bachelorangebot/wirtschaft-und-dienstleistung/digital-business-management/)
+[Alle Informationen zum Studium und den Modulen](https://www.fhgr.ch/studium/bachelorangebot/wirtschaft-und-dienstleistung/digital-business-management/)
 
