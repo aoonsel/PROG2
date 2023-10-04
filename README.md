@@ -1,6 +1,8 @@
 # PROG2
 Semesterarbeit im Modul PROG2
 
+**Beschreibung**
+
 Studierende sollen die Möglichkeit haben ihren persönlichen Studienplan zu entwerfen/erstellen. Im DBM Studium müssen verschiedene Wahlpflichtmodule in unterschiedlichen Modulgruppen (Sozial- & Methodenkompetenzen, Information Technology, User Experience, Digital Innovation) gewählt werden. 
 
 Studierende sollen die Möglichkeit haben, die einzelnen bzw. die gewählten Module in die einzelne Semester einzutragen (evtl. mit Drag and Drop).
@@ -14,4 +16,11 @@ Anschl. soll berechnet werden wie viele (Module/ECTS-Punkte) noch benötigt werd
 Je nach Aufwand könnte das Projekt noch mit den Noten und dem Notenschnitt erweitert werden. 
 
 Ich müsste somit alle Pflicht- und Wahlpflichtmodule den einzelnen Modulgruppen zuweisen und eine allgemeine Übersicht erstellen um die Module eintragen zu können. 
+
+**Übersicht Vollzeitstudium:** 
+![Alt text][def]
+
+![alt text](Übersciht Vollzeitstudium.png)
+
+[title](https://www.fhgr.ch/studium/bachelorangebot/wirtschaft-und-dienstleistung/digital-business-management/)
 
