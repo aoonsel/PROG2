@@ -18,9 +18,12 @@ Je nach Aufwand könnte das Projekt noch mit den Noten und dem Notenschnitt erwe
 Ich müsste somit alle Pflicht- und Wahlpflichtmodule den einzelnen Modulgruppen zuweisen und eine allgemeine Übersicht erstellen um die Module eintragen zu können. 
 
 **Übersicht Vollzeitstudium:** 
-![Alt text][def]
+![Übersciht Vollzeitstudium](<Übersciht Vollzeitstudium-1.png>)
 
-![alt text](Übersciht Vollzeitstudium.png)
 
 [Alle Informationen zum Studium und den Modulen](https://www.fhgr.ch/studium/bachelorangebot/wirtschaft-und-dienstleistung/digital-business-management/)
 
+
+
+[def]: <Übersciht Vollzeitstudium-1.png>
+[def2]: image.png
