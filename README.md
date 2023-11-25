@@ -1,8 +1,7 @@
 # **PROG2**
 Semesterarbeit im Modul PROG2
 
-**Beschreibung**
-#Nachfolgend soll die Idee für das Semesterprojekt kurz beschreieben werden. 
+**Beschreibung** <!-- Nachfolgend soll die Idee für das Semesterprojekt kurz beschreieben werden.  -->
 
 Studierende sollen die Möglichkeit haben ihren persönlichen Studienplan zu entwerfen/erstellen. Im DBM Studium müssen verschiedene Wahlpflichtmodule in unterschiedlichen Modulgruppen (Sozial- & Methodenkompetenzen, Information Technology, User Experience, Digital Innovation) gewählt werden. 
 
