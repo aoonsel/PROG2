@@ -1,0 +1,75 @@
+thesis:
+  name: Thesis
+  elective_min_credits: 0
+  courses:
+    - name: Thesis
+      code: 8888
+      credits: 12
+      description: Thesis for the degree of Bachelor of Science in Computer Science.
+      type: obligatory
+social:
+  name: Social Studies
+  elective_min_credits: 4
+  courses:
+    - name: Social Course 1
+      code: 1111 # code := id of the course. Must be unique.
+      credits: 4
+      description: Social Studies are the study of social relationships and institutions.
+      type: obligatory
+    - name: Social Course 2
+      code: 2222
+      credits: 4
+      description: Social Studies are the study of social relationships and institutions.
+      type: obligatory
+    - name: Social Course 3
+      code: 3333
+      credits: 4
+      description: Social Studies are the study of social relationships and institutions.
+      type: elective
+information_technology:
+  name: Information Technology
+  elective_min_credits: 8
+  courses:
+    - name: IT course 1
+      code: 4444
+      credits: 4
+      description: Information Technology is the use of computers to store, retrieve, transmit, and manipulate data or information.
+      type: obligatory
+    - name: IT course 2
+      code: 5555
+      credits: 4
+      description: Information Technology is the use of computers to store, retrieve, transmit, and manipulate data or information.
+      type: obligatory
+    - name: IT course 3
+      code: 9999
+      credits: 4
+      description: Information Technology is the use of computers to store, retrieve, transmit, and manipulate data or information.
+      type: obligatory
+    - name: IT course 4
+      code: 0000
+      credits: 4
+      description: Information Technology is the use of computers to store, retrieve, transmit, and manipulate data or information.
+      type: elective
+    - name: IT course 5
+      code: 10000
+      credits: 4
+      description: Information Technology is the use of computers to store, retrieve, transmit, and manipulate data or information.
+      type: elective
+ux:
+  name: User Experience
+  elective_min_credits: 8
+  courses:
+    - name: User Experience Course 1
+      code: 6666
+      credits: 4
+      description: User Experience is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product.
+      type: obligatory
+digital_innovation:
+  name: Digital Innovation
+  elective_min_credits: 8
+  courses:
+    - name: DI Course 1
+      code: 7777
+      credits: 4
+      description: Digital Innovation is the process of using digital technologies to create new or modify existing business processes, culture, and customer experiences to meet changing business and market requirements.
+      type: obligatory
