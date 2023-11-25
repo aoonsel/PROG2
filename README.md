@@ -17,7 +17,8 @@ Je nach Aufwand könnte das Projekt noch mit den Noten und dem Notenschnitt erwe
 
 Ich müsste somit alle Pflicht- und Wahlpflichtmodule den einzelnen Modulgruppen zuweisen und eine allgemeine Übersicht erstellen um die Module eintragen zu können. 
 
-**Übersicht Vollzeitstudium:** 
+**Übersicht Vollzeitstudium:** <!-- Nützliche Links und Übersicht Vollzeitstudium  -->
+
 
 ![Übersciht Vollzeitstudium][def]
 
@@ -25,4 +26,10 @@ Ich müsste somit alle Pflicht- und Wahlpflichtmodule den einzelnen Modulgruppen
 
 
 [def]: <Übersciht Vollzeitstudium-1.png>
-[def2]: image.png
+
+
+
+<!-- URL am Schluss des Projekts bearbeiten, wird auch berücksichtigt bei der Benotung  -->
+
+
+
