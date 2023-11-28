@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, request
 
-
+from course_controller import CourseController
 
 app = Flask(__name__)
 
@@ -39,4 +39,5 @@ def courses():
 
 
 if __name__ == "__main__":
+    print("courses", CourseController().courses)
     app.run(debug=True)
