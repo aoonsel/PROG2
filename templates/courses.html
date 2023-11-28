@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for category in category_courses %}
+<h2 class="mb-3">{{ category_courses[category].name }}</h2>
+<ol class="list-group list-group-numbered mb-4">
+  {% for course in category_courses[category].courses %}
+   <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">
+          <b>{{course.name}}</b>
+          {% if course.type == "obligatory" %}
+            <span class="badge badge-pill badge-primary">{{course.type}}</span>
+          {% else %}
+            <span class="badge badge-pill badge-warning">{{course.type}}</span>
+          {% endif %}
+      </div>
+      {{course.description}}
+    </div>
+    <span class="badge bg-info rounded-pill">{{course.credits}} credits</span>
+  </li>
+  {% endfor %}
+</ol>
+{% endfor %}
+
+{% endblock %}

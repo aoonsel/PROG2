@@ -33,11 +33,10 @@ def structure():
 def courses():
     return render_template(
         "courses.html",
-    
+        category_courses=CourseController().category_courses,
     )
 
 
 
 if __name__ == "__main__":
-    print("courses", CourseController().courses)
     app.run(debug=True)
