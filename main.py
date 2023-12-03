@@ -25,7 +25,7 @@ def overview():
 def structure():
     return render_template(
         "structure.html",
-
+        category_courses=CourseController().category_courses,
     )
 
 
