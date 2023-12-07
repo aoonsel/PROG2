@@ -1,0 +1,26 @@
+/*
+extends the bootstrap css which is loaded dynamically
+*/
+.navbar {
+    text-align: center;
+}
+
+#app {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-fixed-width th,
+.table-fixed-width td {
+    width: 30vw;
+}
+
+.grade {
+    width: 10vw;
+}

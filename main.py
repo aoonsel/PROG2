@@ -36,7 +36,16 @@ def courses():
         category_courses=CourseController().category_courses,
     )
 
+@app.route("/submit", methods=["POST"])
+def submit():
 
+    course=None
+    grade=None
+    return render_template(
+        "submit_success.html",
+        course=course,
+        grade=grade,
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
