@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Success</h3>
+{% if grade is not none %}
+The course <b>{{course.name}}</b> has been submitted with the grade <b>{{grade}}</b>.
+{% else %}
+The course <b>{{course.name}}</b> has been selected.
+{% endif %}
+{% endblock %}
