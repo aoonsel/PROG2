@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Overview</h1>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="{{stats["credits"]}}" aria-valuemin="0" aria-valuemax="{{stats["min_credits"]}}" style="width: {{100*stats["credits"]/stats["min_credits"]}}%">You have {{stats["credits"]}} of {{stats["min_credits"]}} credits</div>
+</div>
+<p>Here is a brief overview over your chosen courses.</p>
+{% for category in category_courses %}
+<h2 class="mb-3">{{ category_courses[category].name}}{{" (Major)" if category_courses[category].major }}</h2>
+You have <b>{{category_courses[category].category_credits}}</b> credits in this category.
+{% if category_courses[category].elective_min_credits > 0 %}
+<span class="h5 badge badge-pill badge-primary">need min. {{category_courses[category].elective_min_credits}} credits in elective courses</span>
+{% endif %}
+{% if warning_messages[category] is defined %}
+<div class="alert alert-warning" role="alert">
+  {{warning_messages[category]}}
+</div>
+{% endif %}
+
+<table class="table table-fixed-width">
+  <thead>
+    <tr>
+      <th scope="col">Course</th>
+      <th scope="col">Status</th>
+      <th scope="col">Grade</th>
+      <th scope="col">Credits</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for course in category_courses[category].courses %}
+  {% if course.selected is defined or course.type == "obligatory" %}
+    <tr>
+      <td>{{course.name}}</td>
+      <td><span class="badge badge-pill badge-{{"success" if course.grade is defined and course.grade >= 4.0 else "info"}}">{{"passed" if course.grade is defined and course.grade >= 4.0 else "planned"}}</span></td>
+      <td>{{ course.grade if course.grade is defined else "--" }}</td>
+      <td>{{course.credits}}</td>
+      <td><span class="badge badge-pill badge-{{"warning" if course.type == "obligatory" else "primary"}}">{{course.type}}</span></td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+</tbody>
+</table>
+{% endfor %}
+
+{% endblock %}

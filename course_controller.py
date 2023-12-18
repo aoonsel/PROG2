@@ -8,12 +8,15 @@ import yaml
 class CourseController:
     _instance = None
 
+    NECESSARY_CREDITS = 180
+    MAJOR_CREDITS = 20
+
     def __new__(cls):
         # creates only a new object if it does not exist yet
         if cls._instance is None:
             cls._instance = super(CourseController, cls).__new__(cls)
 
-            yml = yaml.load(open("data/courses.yaml", "r"), Loader=yaml.FullLoader)
+            yml = yaml.load(open("data/courses.yaml", "r", encoding='utf-8'), Loader=yaml.FullLoader)
             cls._instance.category_courses = yml
             cls._instance.courses = cls.get_all_courses()
 
@@ -47,16 +50,24 @@ class CourseController:
         return courses
 
     @staticmethod
+    def get_categories():
+        categories = []
+        for course in CourseController().category_courses:
+            categories.append(course)
+        return categories
+
+    @staticmethod
     def get_category(course_code: int):
         for category in CourseController().category_courses:
             for course in CourseController().category_courses[category]["courses"]:
                 if course["code"] == course_code:
                     return category
-    
-    #test
+
     @staticmethod
-    def get_categories():
+    def get_categories_name():
         categories = []
-        for course in CourseController().category_courses:
-            categories.append(course)
+
+        for cat in CourseController().category_courses:
+            categories.append(CourseController().category_courses[cat]["name"])
+
         return categories
