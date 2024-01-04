@@ -10,10 +10,10 @@
 {% for category in category_courses %}
 <h2 class="mb-3">{{ category_courses[category].name}}{{" (Major)" if category_courses[category].major }}</h2>
 You have <b>{{category_courses[category].category_credits}}</b> credits in this category.
-{% if category_courses[category].elective_min_credits > 0 %}
+{% if category_courses[category].elective_min_credits > 0 and category_courses[category].name != "Praxistransfer" and category_courses[category].name != "Unternehmensprojekt" %}
 <span class="h5 badge badge-pill badge-primary">need min. {{category_courses[category].elective_min_credits}} credits in elective courses</span>
 {% endif %}
-{% if warning_messages[category] is defined %}
+{% if warning_messages[category] is defined and category_courses[category].name != "Praxistransfer" and category_courses[category].name != "Unternehmensprojekt" %}
 <div class="alert alert-warning" role="alert">
   {{warning_messages[category]}}
 </div>
