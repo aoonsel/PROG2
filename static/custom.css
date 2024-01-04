@@ -21,6 +21,6 @@ extends the bootstrap css which is loaded dynamically
     width: 30vw;
 }
 
-.grade {
-    width: 10vw;
+#grade {
+    min-width: 5vw;
 }
