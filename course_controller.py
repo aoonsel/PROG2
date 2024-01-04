@@ -9,6 +9,7 @@ class CourseController:
     _instance = None
 
     NECESSARY_CREDITS = 180
+    START_THESIS = 140
     MAJOR_CREDITS = 20
 
     def __new__(cls):

@@ -49,6 +49,13 @@ def overview():
                     category: f"Not enough credits in category. Need at least {str(min_credits)} elective credits."
                 }
             )
+        if category == "Bachelorarbeit" and sum_credits < CourseController.START_THESIS:
+            warning_messages.update(
+                {
+                    category: f"Not enough credits to start thesis. Need at least {str(CourseController.START_THESIS)} credits in sum."
+                }
+            )
+
 
     category_courses_program = CourseController().category_courses
     # bring program information into course data
@@ -132,6 +139,39 @@ def submit():
         return render_template(
             "submit_error.html", error="Cannot submit obligatory course without grade."
         )
+    
+    sum_credits = 0
+    program = ProgramController().get_program()
+    for course_code in program:
+        course = CourseController().get_course(course_code)
+        if (
+            program[course_code]["selected"]
+            and "grade" in program[course_code]
+            and program[course_code]["grade"] >= 4.0
+        ):
+            sum_credits += course["credits"]
+
+    # Thesis can only be selected when sum of credits is at least 140
+    if course["name"] == "Thesis" and sum_credits < CourseController.START_THESIS:
+        return render_template(
+            "submit_error.html", error=f"Not enough credits to start thesis. Need at least {CourseController.START_THESIS} credits in sum."
+        )
+
+    
+    # find grade of Praxistransfer in program
+    grade_praxis = None
+    for course_code in program:
+        course = CourseController().get_course(course_code)
+        if course["name"] == "Praxistransfer":
+            grade_praxis = program[course_code]["grade"]
+            break
+
+    # Unternehmensprojekt can only be selected when Praxistransfer is passed
+    if not grade_praxis or (grade_praxis < 4.0 and course["name"] == "Unternehmensprojekt"):
+        return render_template(
+            "submit_error.html", error=f"Unternehmensprojekt kann erst gewählt werden, wenn Praxistransfer bestanden ist."
+        )
+
     # when course type elective, not selected and no grade, do delete course from program
     if grade is None and "selected" not in form_data and course_type == "elective":
         ProgramController().select_course(course_code)
@@ -151,4 +191,4 @@ def submit():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
