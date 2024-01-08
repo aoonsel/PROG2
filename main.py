@@ -36,8 +36,8 @@ def overview():
         for course_code in program:
             course = CourseController().get_course(course_code)
             if (
-                course["type"] and
-                course["type"] == "elective"
+                course["type"]
+                and course["type"] == "elective"
                 and program[course_code]["selected"]
                 and category == CourseController().get_category(course_code)
             ):
@@ -55,7 +55,6 @@ def overview():
                     category: f"Not enough credits to start thesis. Need at least {str(CourseController.START_THESIS)} credits in sum."
                 }
             )
-
 
     category_courses_program = CourseController().category_courses
     # bring program information into course data
@@ -139,37 +138,40 @@ def submit():
         return render_template(
             "submit_error.html", error="Cannot submit obligatory course without grade."
         )
-    
+
     sum_credits = 0
     program = ProgramController().get_program()
-    for course_code in program:
-        course = CourseController().get_course(course_code)
+    for course_code_temp in program:
+        course_temp = CourseController().get_course(course_code_temp)
         if (
-            program[course_code]["selected"]
-            and "grade" in program[course_code]
-            and program[course_code]["grade"] >= 4.0
+            program[course_code_temp]["selected"]
+            and "grade" in program[course_code_temp]
+            and program[course_code_temp]["grade"] >= 4.0
         ):
-            sum_credits += course["credits"]
+            sum_credits += course_temp["credits"]
 
     # Thesis can only be selected when sum of credits is at least 140
     if course["name"] == "Thesis" and sum_credits < CourseController.START_THESIS:
         return render_template(
-            "submit_error.html", error=f"Not enough credits to start thesis. Need at least {CourseController.START_THESIS} credits in sum."
+            "submit_error.html",
+            error=f"Not enough credits to start thesis. Need at least {CourseController.START_THESIS} credits in sum.",
         )
 
-    
     # find grade of Praxistransfer in program
     grade_praxis = None
-    for course_code in program:
-        course = CourseController().get_course(course_code)
-        if course["name"] == "Praxistransfer":
-            grade_praxis = program[course_code]["grade"]
+    for course_code_temp in program:
+        course_temp = CourseController().get_course(course_code_temp)
+        if course_temp["name"] == "Fachpraktikum":
+            grade_praxis = program[course_code_temp]["grade"]
             break
 
     # Unternehmensprojekt can only be selected when Praxistransfer is passed
-    if not grade_praxis or (grade_praxis < 4.0 and course["name"] == "Unternehmensprojekt"):
+    if course["name"] == "Unternehmensprojekt" and (
+        not grade_praxis or (grade_praxis and grade_praxis < 4.0)
+    ):
         return render_template(
-            "submit_error.html", error=f"Unternehmensprojekt kann erst gewählt werden, wenn Praxistransfer bestanden ist."
+            "submit_error.html",
+            error="Unternehmensprojekt kann erst gewählt werden, wenn Praxistransfer (Fachpraktikum) bestanden ist.",
         )
 
     # when course type elective, not selected and no grade, do delete course from program
