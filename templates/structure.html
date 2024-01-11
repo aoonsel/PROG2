@@ -2,9 +2,8 @@
 
 
 {% block content %}
-
-<p>Structure your study program to succeed.</p>
-
+<h1>Leistungen wählen und verbuchen</h1>
+<p></p>
 
 {% for category in category_courses %}
 <h2 class="mb-3">{{ category_courses[category].name }}</h2>
@@ -15,9 +14,9 @@
       <div class="fw-bold">
           <b>{{course.name}}</b>
           {% if course.type == "obligatory" %}
-            <span class="badge badge-pill badge-primary">{{course.type}}</span>
+            <span class="badge badge-pill badge-primary">Pflicht</span>
           {% else %}
-            <span class="badge badge-pill badge-warning">{{course.type}}</span>
+            <span class="badge badge-pill badge-warning">Wahl</span>
           {% endif %}
           <span class="badge bg-info rounded-pill">{{course.credits}} credits</span>
       </div>
@@ -27,25 +26,25 @@
            {% if course.type == "obligatory" %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" disabled checked>
-              <label class="form-check-label" for="{{course.code}}">Obligatory</label>
+              <label class="form-check-label" for="{{course.code}}">Obligatorisch</label>
             </div>
             <div class="form-outline col-sm-4" data-mdb-input-init>
               <input type="number" id="grade" class="form-control" min="1" max="6" step="0.5" name="grade" value="{{program[course.code]["grade"] if course.code in program and "grade" in program[course.code] else ""}}"/>
-              <label class="form-label" for="grade">Grade</label>
+              <label class="form-label" for="grade">Note</label>
             </div>
           {% else %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="selected" value="selected course" name="selected" {{"checked" if course.code in program}}>
-              <label class="form-check-label" for="selected">Elective</label>
+              <label class="form-check-label" for="selected">Wählbar</label>
             </div>
 
             <div class="form-outline col-sm-4" data-mdb-input-init>
               <input type="number" id="grade" class="form-control" min="1" max="6" step="0.5" name="grade" value="{{program[course.code]["grade"] if course.code in program and "grade" in program[course.code] else ""}}"/>
-              <label class="form-label" for="grade">Grade</label>
+              <label class="form-label" for="grade">Note</label>
             </div>
            {% endif %}
            <div class="ms-auto">
-              <button type="submit" class="btn btn-primary" name="course.code" value="{{course.code}}">Submit</button>
+              <button type="submit" class="btn btn-primary" name="course.code" value="{{course.code}}">Senden</button>
            </div>
        </form>
   </li>
@@ -60,24 +59,24 @@
            {% if course.type == "obligatory" %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="{{course.code}}" value="value" disabled checked>
-              <label class="form-check-label" for="{{course.code}}">Obligatory</label>
+              <label class="form-check-label" for="{{course.code}}">Obligatorisch</label>
             </div>
             <div class="form-outline col-sm-4" data-mdb-input-init>
               <input type="number" id="grade" class="form-control" min="1" max="6" step="0.5"/>
-              <label class="form-label" for="grade">Grade</label>
+              <label class="form-label" for="grade">Note</label>
             </div>
           {% else %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="{{course.code}}" value="value">
-              <label class="form-check-label" for="{{course.code}}">Elective</label>
+              <label class="form-check-label" for="{{course.code}}">Wählbar</label>
             </div>
             <div class="form-outline col-sm-4" data-mdb-input-init>
               <input type="number" id="grade" class="form-control" min="1" max="6" step="0.5"/>
-              <label class="form-label" for="grade">Grade</label>
+              <label class="form-label" for="grade">Note</label>
             </div>
            {% endif %}
            <div class="ms-auto">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Senden</button>
            </div>
        </form>
 

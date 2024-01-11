@@ -11,9 +11,9 @@
       <div class="fw-bold">
           <b>{{course.name}}</b>
           {% if course.type == "obligatory" %}
-            <span class="badge badge-pill badge-primary">{{course.type}}</span>
+            <span class="badge badge-pill badge-primary">{{"Pflicht" if course.type == "obligatory" else "Wahlpflicht"}}</span>
           {% else %}
-            <span class="badge badge-pill badge-warning">{{course.type}}</span>
+            <span class="badge badge-pill badge-warning">{{"Pflicht" if course.type == "obligatory" else "Wahlpflicht"}}</span>
           {% endif %}
       </div>
       {{course.description}}

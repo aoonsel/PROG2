@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<h1>Overview</h1>
+<h1>Leistungsübersicht</h1>
 <div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="{{stats["credits"]}}" aria-valuemin="0" aria-valuemax="{{stats["min_credits"]}}" style="width: {{100*stats["credits"]/stats["min_credits"]}}%">You have {{stats["credits"]}} of {{stats["min_credits"]}} credits</div>
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="{{stats["credits"]}}" aria-valuemin="0" aria-valuemax="{{stats["min_credits"]}}" style="width: {{100*stats["credits"]/stats["min_credits"]}}%">{{stats["credits"]}} von {{stats["min_credits"]}} Credits sind bereits bestanden.</div>
 </div>
-<p>Here is a brief overview over your chosen courses.</p>
+<p>Hier ist die Leistungsübersicht über Pflicht- und Wahlpflicht Module</p>
 {% for category in category_courses %}
 <h2 class="mb-3">{{ category_courses[category].name}}{{" (Major)" if category_courses[category].major }}</h2>
-You have <b>{{category_courses[category].category_credits}}</b> credits in this category.
+Es sind <b>{{category_courses[category].category_credits}}</b> credits in diese Kategorie.
 {% if category_courses[category].elective_min_credits > 0 and category_courses[category].name != "Praxistransfer" and category_courses[category].name != "Unternehmensprojekt" %}
-<span class="h5 badge badge-pill badge-primary">need min. {{category_courses[category].elective_min_credits}} credits in elective courses</span>
+<span class="h5 badge badge-pill badge-primary"> min. {{category_courses[category].elective_min_credits}} Wahlpflicht credits sind notwendig</span>
 {% endif %}
 {% if warning_messages[category] is defined and category_courses[category].name != "Praxistransfer" and category_courses[category].name != "Unternehmensprojekt" %}
 <div class="alert alert-warning" role="alert">
@@ -22,11 +22,11 @@ You have <b>{{category_courses[category].category_credits}}</b> credits in this 
 <table class="table table-fixed-width">
   <thead>
     <tr>
-      <th scope="col">Course</th>
+      <th scope="col">Modul</th>
       <th scope="col">Status</th>
-      <th scope="col">Grade</th>
+      <th scope="col">Note</th>
       <th scope="col">Credits</th>
-      <th scope="col">Type</th>
+      <th scope="col">Typ</th>
     </tr>
   </thead>
   <tbody>
@@ -34,10 +34,10 @@ You have <b>{{category_courses[category].category_credits}}</b> credits in this 
   {% if course.selected is defined or course.type == "obligatory" %}
     <tr>
       <td>{{course.name}}</td>
-      <td><span class="badge badge-pill badge-{{"success" if course.grade is defined and course.grade >= 4.0 else "info"}}">{{"passed" if course.grade is defined and course.grade >= 4.0 else "planned"}}</span></td>
+      <td><span class="badge badge-pill badge-{{"success" if course.grade is defined and course.grade >= 4.0 else "info"}}">{{"bestanden" if course.grade is defined and course.grade >= 4.0 else "im Modulplan"}}</span></td>
       <td>{{ course.grade if course.grade is defined else "--" }}</td>
       <td>{{course.credits}}</td>
-      <td><span class="badge badge-pill badge-{{"warning" if course.type == "obligatory" else "primary"}}">{{course.type}}</span></td>
+      <td><span class="badge badge-pill badge-{{"warning" if course.type == "obligatory" else "primary"}}">{{"Pflicht" if course.type == "obligatory" else "Wahlpflicht"}}</span></td>
     </tr>
   {% endif %}
   {% endfor %}
