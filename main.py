@@ -46,13 +46,13 @@ def overview():
         if temp_credits < min_credits:
             warning_messages.update(
                 {
-                    category: f"Not enough credits in category. Need at least {str(min_credits)} elective credits."
+                    category: f"Nicht genügend Credits in Kategorie. Es werden mindestens {str(min_credits)} Wahlcredits benötigt.",
                 }
             )
         if category == "Bachelorarbeit" and sum_credits < CourseController.START_THESIS:
             warning_messages.update(
                 {
-                    category: f"Not enough credits to start thesis. Need at least {str(CourseController.START_THESIS)} credits in sum."
+                    category: f"Nicht genügend Credits für Bachelorarbeit. Es werden mindestens {str(CourseController.START_THESIS)} Credits benötigt."
                 }
             )
 
@@ -118,25 +118,26 @@ def submit():
     course_code = int(form_data["course.code"])
     course = CourseController().get_course(course_code)
 
-    # check if data attribute is present
+    # überprüfen ob Note hinterlegt wurde
     grade = None
     if "grade" in form_data and form_data["grade"] != "":
         grade = float(form_data["grade"])
     else:
         grade = None
 
-    # cannot submit grade without being selected, when course is elective
+    # Note kann nicht hinterlegt werden, wenn Kurs nicht gewählt ist
     course_type = course["type"]
     if grade is not None and "selected" not in form_data and course_type == "elective":
         return render_template(
             "submit_error.html",
-            error="Cannot submit grade for course without being selected.",
+            error="Es kann keine Note für einen Kurs hinterlegen, der nicht gewählt ist.",
         )
 
-    # when course type obligatory, grade must be submitted
+    # wenn Kurs verpflichtend ist, muss Note hinterlegt sein
     if grade is None and course_type == "obligatory":
         return render_template(
-            "submit_error.html", error="Cannot submit obligatory course without grade."
+            "submit_error.html",
+            error="Es kann kein verpflichtenden Kurs ohne Note hinterlegen.",
         )
 
     sum_credits = 0
@@ -154,7 +155,7 @@ def submit():
     if course["name"] == "Thesis" and sum_credits < CourseController.START_THESIS:
         return render_template(
             "submit_error.html",
-            error=f"Not enough credits to start thesis. Need at least {CourseController.START_THESIS} credits in sum.",
+            error=f"Bachelorarbeit erst gewählt werden, wenn mindestens {CourseController.START_THESIS} Credits erreicht sind.",
         )
 
     # find grade of Praxistransfer in program
@@ -177,7 +178,7 @@ def submit():
     # when course type elective, not selected and no grade, do delete course from program
     if grade is None and "selected" not in form_data and course_type == "elective":
         ProgramController().select_course(course_code)
-        return "Course is not selected anymore!"
+        return "Modul ist nicht mehr gewählt!"
 
     # write new program to file
     ProgramController().select_course(course_code)

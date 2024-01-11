@@ -17,7 +17,9 @@ class CourseController:
         if cls._instance is None:
             cls._instance = super(CourseController, cls).__new__(cls)
 
-            yml = yaml.load(open("data/courses.yaml", "r", encoding='utf-8'), Loader=yaml.FullLoader)
+            yml = yaml.load(
+                open("data/courses.yaml", "r", encoding="utf-8"), Loader=yaml.FullLoader
+            )
             cls._instance.category_courses = yml
             cls._instance.courses = cls.get_all_courses()
 

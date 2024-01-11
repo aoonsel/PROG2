@@ -1,0 +1,70 @@
+<mxfile host="65bd71144e">
+    <diagram id="jLmJeorO7NdjbZw4wCq7" name="Page-1">
+        <mxGraphModel dx="773" dy="565" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="583" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="16" value="ProgramController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBorderColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="484" y="260" width="160" height="180" as="geometry">
+                        <mxRectangle x="484" y="260" width="150" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="+ program: dict&#10;+ file_path: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBorderColor=none;" parent="16" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBorderColor=none;" parent="16" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="+ get_program(): dict&#10;+ load_file(): file&#10;+ write_file(): void&#10;+ select_course(int): void&#10;+ deselect_course(int): void&#10;+ set_grade(int, float): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBorderColor=none;" parent="16" vertex="1">
+                    <mxGeometry y="78" width="160" height="102" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="CourseController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBorderColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="184" y="260" width="176" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="+ courses: dict&#10;+ category_courses: dict&#10;+ necessay_credits: int&#10;+ start_thesis: int&#10;+ major_credits: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBorderColor=none;" parent="20" vertex="1">
+                    <mxGeometry y="26" width="176" height="74" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBorderColor=none;" parent="20" vertex="1">
+                    <mxGeometry y="100" width="176" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="+ get_course(int): dict&#10;+ get_all_courses(int): dict&#10;+ get_categories(): list&#10;+ get_category(int): str&#10;+ get_categories_name(): list" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBorderColor=none;" parent="20" vertex="1">
+                    <mxGeometry y="170" width="176" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;entryX=0.573;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;labelBorderColor=none;" parent="1" source="24" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=none;" parent="28" vertex="1" connectable="0">
+                    <mxGeometry x="-0.7634" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBorderColor=none;" parent="1" source="24" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=none;" parent="29" vertex="1" connectable="0">
+                    <mxGeometry x="-0.8763" y="-1" relative="1" as="geometry">
+                        <mxPoint x="10" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="Main" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBorderColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="338" y="10" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="+ app: Flask" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBorderColor=none;" parent="24" vertex="1">
+                    <mxGeometry y="26" width="160" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBorderColor=none;" parent="24" vertex="1">
+                    <mxGeometry y="52" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="+ home(): str&#10;+ overview(): str&#10;+ structure(): str&#10;+ courses(): str&#10;+ submit(): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBorderColor=none;" parent="24" vertex="1">
+                    <mxGeometry y="60" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="0 ..1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBorderColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="259" y="235" width="50" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="0..1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBorderColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="544" y="235" width="40" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
