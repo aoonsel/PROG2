@@ -1,29 +1,90 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>{% block title %}Home{% endblock %}</h3>
 <p>
     <h1><strong>PROG2</strong></h1>
     <p>Semesterarbeit im Modul PROG2</p>
     
     <h2><strong>Beschreibung</strong></h2>
-    <p>Studierende sollen die Möglichkeit haben ihren persönlichen Studienplan zu entwerfen/erstellen. Im DBM Studium müssen verschiedene Wahlpflichtmodule in unterschiedlichen Modulgruppen (Sozial- & Methodenkompetenzen, Information Technology, User Experience, Digital Innovation) gewählt werden.</p>
+    <p>Studierende haben die Möglichkeit ihren persönlichen Studienplan zu entwerfen/erstellen. Im DBM Studium müssen verschiedene Wahlpflichtmodule in unterschiedlichen Modulgruppen (Sozial- & Methodenkompetenzen, Information Technology, User Experience, Digital Innovation) gewählt werden.</p>
     
-    <p>Studierende sollen die Möglichkeit haben, die einzelnen bzw. die gewählten Module in die einzelne Semester einzutragen (evtl. mit Drag and Drop).</p>
+    <p>Studierende haben zudem die Möglichkeit, die einzelnen bzw. die gewählten Module mit Noten einzutragen.</p>
     
-    <p>Das Programm soll absolvierte/bestandene Module speichern und die ECTS-Punkte automatisch berechnen.</p>
+    <p>Das Programm speichert absolvierte/bestandene Module und berechnet die ECTS-Punkte automatisch.</br>
+    Restriktionen, wie bspw. die Notwendigkeit von mindestens 140 ects vor Anfang der Thesis, werden berücksichtig.</p>
     
-    <p>Es soll eine Übersicht erstellt werden, wo die Studierenden sehen wie viele ECTS-Punkte pro Modulgruppe bereits absolviert wurden.</p>
+    <h3><strong>Seite: Übersicht</strong></h3>
+    <p>Der Fortschrittsbalken in der Übersicht zeigt den aktuellen Stand der absolvierten ECTS-Punkte an und wie viel noch
+            notwendig ist.</p>
+    <p>Die Übersicht listet tabellarisch die eingetragenen Noten der Module je Kategorie auf. Dabei wird unterschieden zwischen "bestanden" und "im Modulplan ausgewählt".</p>
+    <p>Je Kategorie gibt es die Möglichkeit einen Major zur erhalten (mit min. 20 ECTS) und einen Hinweis, wenn man noch nicht die benötigte Anzahl an Punkten hat in der Kategorie.</p>
     
-    <p>Anschl. soll berechnet werden wie viele (Module/ECTS-Punkte) noch benötigt werden, um die Mindestanzahl an Punkten in der jeweiligen Modulgruppe zu bekommen.</p>
-    
-    <p>Je nach Aufwand könnte das Projekt noch mit den Noten und dem Notenschnitt erweitert werden.</p>
-    
-    <p>Ich müsste somit alle Pflicht- und Wahlpflichtmodule den einzelnen Modulgruppen zuweisen und eine allgemeine Übersicht erstellen um die Module eintragen zu können.</p>
-    
+    <h3><strong>Seite: Module wählen</strong></h3>
+    <p>Auf dieser Seite kann man die Module benoten und selektieren, wenn es sich um Wahlpflichtmodule handelt.</p>
+    <p>Die kategorisiereten Module haben die wichtigsten Informationen und einen Beschreibungstext.</p>
+    <p>Noten können von eins bis fünf eingetragenen werden und anschließend über den "Senden"-Button eingetragen werden.</p>
+    <p>Anschließend wird die Gültigkeit überprüft und eine Rückmeldung ausgegeben.</p>
+
+    <h3><strong>Seite: Alle Module</strong></h3>
+    <p>Auch hier können alle Module betrachtet werden, jedoch ohne die Möglichkeit Änderungen vorzunehmen.</p>
+
     <h2><strong>Übersicht Vollzeitstudium:</strong></h2>
-    <p><img src="Übersciht Vollzeitstudium-1.png" alt="Übersciht Vollzeitstudium"></p>
+    <p><a href="https://www.fhgr.ch/studium/bachelorangebot/wirtschaft-und-dienstleistung/digital-business-management/" target="_blank">Alle Informationen zum Studium und den Modulen</a></p>
+    <p><img src="{{ url_for('static', filename='studienplan.png') }}" alt="Übersicht Vollzeitstudium"></p>
+
+    <h2><strong>Technische Beschreibung:</strong></h2>
+    <p>Die Applikation ist in Python geschrieben und verwendet das Flask Framework. Für die Darstellung wird Jinja2 verwendet.</p>
     
-    <p><a href="https://www.fhgr.ch/studium/bachelorangebot/wirtschaft-und-dienstleistung/digital-business-management/">Alle Informationen zum Studium und den Modulen</a></p>
+    <h3><strong>Struktur</strong></h3>
+    Der Python Code ist in drei Dateien aufgeteilt:
+    <ul>
+        <li><code>main.py</code></li>
+        <li><code>course_controller.py</code></li>
+        <li><code>program_controller.py</code></li>
+    </ul>
+    <p>und die Applikation hat drei Ordner:</p>
+    <ul>
+        <li><code>data</code></li>
+        <ul>
+            <li><code>courses.yaml</code>: enthält die Moduldaten</li>
+            <li><code>program.pkl</code>: enthält die Nutzer-Moduldaten</li>
+        </ul>
+        <li><code>templates</code>: enthält Jinja2 Vorlagen</li>
+        <li><code>static</code>: statische Dateien für die Darstellung</li>
+    </ul>
+
+    <h3><strong>Programmstart</strong></h3>
+
+
+    <p>
+        Das Programm startet in der <code>main.py</code> und ist abhängig von <code>course_controller.py</code> und <code>program_controller.py</code>.
+        Die <code>main.py</code> ist für die Darstellung der Seiten zuständig und verwendet die Jinja2 Vorlagen aus dem <code>templates</code> Ordner.
+        Die <code>course_controller.py</code> verwaltet die Moduldaten aus der YAML-Datei und ihre Repräsentation. 
+        Die <code>program_controller.py</code> für die Nutzer-Moduldaten zuständig und speichert/löscht die Noten und selektieren Module.</br>
+    </p>
+    <center>
+        <img src="{{ url_for('static', filename='class_diagram.png') }}" alt="class_diagram">
+    </center>
+    <p>Die beiden Klassen <code>CourseController</code> und <code>ProgramController</code> sind statische Klassen. Dadurch gibt es genau eine Instanz von der Klasse und die Instanz ist immer über den Klassennamen aufrufbar.</p>
+
+    <h3><strong>Daten</strong></h3>
+    <p>Die Daten über die Module werden in einer YAML-Datei gespeichert (<code>data/courses.yaml</code>), welche die Kurse nach der jeweiligen
+        Modulgruppe sortiert hat.
+        Für eine bessere Lesbarkeit und Einfachheit wurde es sich für YAML entschieden.</p>
+    <p>
+    </p>
+    <p>
+        Damit die Daten persistent gespeichert werden können, wird das Pickle-Format verwendet.</br>
+        Dabei werden die Objektdaten in ein Byte-Objekt umgewandelt und in einer Datei gespeichert.</br>
+        Der Vorteil ist, dass es schnell geladen werden kann, die Datenstruktur beibehält und in einer kleineren Datei resultiert.</br>
+        Der Nachteil ist, dass es nicht lesbar ist und nicht mit anderen Programmiersprachen kompatibel ist.</br>
+    </p>
+    <h3><strong>Eintragen von Änderungen im Modulplan</strong></h3>
+    <p>Die Änderungen werden über die <code>HTTP POST</code> Methode übertragen und in der <code>main.py</code> verarbeitet.</p>
+    Nachfolgend ist der Ablauf der Überprüfung von der Änderungen dargestellt:
+    <center>
+        <img src="{{ url_for('static', filename='flowchart_submit.png') }}" alt="flowchart_submit">
+    </center>
+    
 </p>
 {% endblock %}
