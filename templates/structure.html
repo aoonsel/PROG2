@@ -20,7 +20,9 @@
           {% endif %}
           <span class="badge bg-info rounded-pill">{{course.credits}} credits</span>
       </div>
-      {{course.description}}
+      <div class="description">
+        {{course.description |safe}}
+      </div>
     </div>
        <form class="ms-auto flex-container" action="{{ url_for('submit') }}" method="post">
            {% if course.type == "obligatory" %}

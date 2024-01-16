@@ -1,26 +1,65 @@
 /*
-extends the bootstrap css which is loaded dynamically
+Erweiterung der bootstrap css, welche dynamisch geladen wird (siehe base.html)
 */
 .navbar {
     text-align: center;
-}
-
-#app {
+  }
+  
+  #app {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.flex-container {
+  }
+  
+  .flex-container {
     display: flex;
     justify-content: space-between;
-}
-
-.table-fixed-width th,
-.table-fixed-width td {
+  }
+  
+  .table-fixed-width th,
+  .table-fixed-width td {
     width: 30vw;
-}
-
-#grade {
+  }
+  
+  #grade {
     min-width: 5vw;
-}
+  }
+  .description {
+    max-width: 40vw;
+  }
+  
+  .diagram {
+    width: 100%;
+    height: 100%;
+  }
+  
+  table td:nth-child(1),
+  table th:nth-child(1) {
+    width: 40%;
+    /* Breite von "modul" spalte */
+  }
+  
+  table td:nth-child(2),
+  table th:nth-child(2) {
+    width: 15%;
+    /* Breite von "status" spalte */
+  }
+  
+  table td:nth-child(3),
+  table th:nth-child(3) {
+    width: 15%;
+    /* Breite von "note" spalte */
+  }
+  
+  table td:nth-child(3),
+  table th:nth-child(3) {
+    width: 15%;
+    /* Breite von "credits" spalte */
+  }
+  
+  table td:nth-child(4),
+  table th:nth-child(4) {
+    width: 15%;
+    /* Breite von "typ" spalte */
+  }
+  

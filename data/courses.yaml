@@ -1,3 +1,18 @@
+# Diese Datei enthält die Modulbeschreibungen des Studiengangs Digital Business Management (BSc) der FHGR.
+# Das schema ist wie folgt aufgebaut:
+#   Modulkategorie:
+#     name: Name der Modulkategorie
+#     elective_min_credits: Mindestanzahl Credits, die in dieser Modulkategorie erreicht werden müssen
+#     description: Beschreibung der Modulkategorie
+#     courses: ist eine Liste von Modulen, die in dieser Modulkategorie enthalten sind
+#       - name: Name des Moduls
+#         code: Modulcode, muss eindeutig sein (int)
+#         credits: Anzahl Credits, die das Modul hat
+#         description: Beschreibung des Moduls
+
+
+# Wenn Zeilenumbrüche sichtbar sein sollen, muss ein | am Ende der Zeile stehen. Siehe "Strategien und Geschäftsmodelle im digitalen Umfeld"
+
 Praxistransfer:
   elective_min_credits: 22
   description: In vielen Modulen arbeitet man direkt mit Unternehmen zusammen. Man erlebt dabei die Bedürfnisse bei Nutzenden, evualuieren Geschäftsmodelle und erstellen interaktive Prototypen.
@@ -5,7 +20,7 @@ Praxistransfer:
   name: Praxistransfer
   courses:
     - name: Fachpraktikum
-      code: 0000
+      code: 1000
       credits: 6
       description: Im Verlaufe des Studiums muss ein Fachpraktikum absolviert werden. Die Stelle muss eigenständig gesucht werden.
       type: obligatory
@@ -312,7 +327,7 @@ Digital Innovation:
     - name: ABWL Unternehmerisches Denken und Handeln
       code: 1024
       credits: 4
-      description: "− Grundlegendes (=theoretisch fundiert und praxisorientiert) Verständnis für unternehmerische In- und Umwelten. Begreifen der zentralen Wirkungszusammenhänge eines Unternehmens in einem dynamischen System. − Erarbeitung einer betriebswirtschaftlichen Methodenkompetenz und − konstruktiv-kritische Auseinandersetzung mit fallbasierten Problemstellungen aus verschiedenen Perspektiven in Einzel- und Gruppenarbeit"
+      description: "Grundlegendes (=theoretisch fundiert und praxisorientiert) Verständnis für unternehmerische In- und Umwelten. Begreifen der zentralen Wirkungszusammenhänge eines Unternehmens in einem dynamischen System. − Erarbeitung einer betriebswirtschaftlichen Methodenkompetenz und − konstruktiv-kritische Auseinandersetzung mit fallbasierten Problemstellungen aus verschiedenen Perspektiven in Einzel- und Gruppenarbeit"
       type: obligatory
  
     - name: Business Process Engineering
@@ -453,9 +468,9 @@ Digital Innovation:
       description: Der Leading Swiss Agency (LSA) Junior Agency Award ist ein anspruchsvoller Hochschulwettbewerb für High Potentials in der Marketingkommunikation. Studierende von verschiedenen Schweizer Hochschulen arbeiten während eines Semesters in Teams an einer Kampagne für einen realen Kunden und treten mit den eigenen Konzepten gegeneinander an. Sie werden dabei durch Coaches aus den LSA-Agenturen begleitet. Sie lernen so am praktischen Beispiel mit Kundenanforderungen, Kreativität und Budgetvorgaben zu arbeiten und erhalten Einblick in die Agenturwelt. Die Arbeiten aller Teams werden zunächst im FHGR-internen Pitch präsentiert und durch interne und externe Experten bewertet. Das beste Team wird das eigene Konzept an der Award-Night präsentierten und die FHGR im Wettbewerb mit den anderen Hochschulen vertreten dürfen.
       type: elective
 
-Wahlpflichtmodule:
-  name: Wahlpflichtmodule
-  description: Ergänzt wird das Studium mit zahlreichen Wahlpflichtmodulen, durch die Sie einen Fokus setzen und Ihr Studium basierend auf Ihren Interessen und Berufsplänen selbst profilieren können. Wenn Sie in einem der Schwerpunkte «User Experience», «Digital Innovation» oder «Information Technology» Module im Umfang von 20 ECTS-Punkten oder mehr absolvieren, so wird dieser in Ihrem Abschlussdiplom als Vertiefung aufgeführt.  
+Wahlmodule:
+  name: Wahlmodule
+  description: Ergänzt wird das Studium mit zahlreichen Wahlmodulen, durch die Sie einen Fokus setzen und Ihr Studium basierend auf Ihren Interessen und Berufsplänen selbst profilieren können. Wenn Sie in einem der Schwerpunkte «User Experience», «Digital Innovation» oder «Information Technology» Module im Umfang von 20 ECTS-Punkten oder mehr absolvieren, so wird dieser in Ihrem Abschlussdiplom als Vertiefung aufgeführt.  
   elective_min_credits: 0
   courses:
     -   name: Digitalisierung in der Brautechnik Teil 1 (Wahlmodul)

@@ -16,7 +16,7 @@
             <span class="badge badge-pill badge-warning">{{"Pflicht" if course.type == "obligatory" else "Wahlpflicht"}}</span>
           {% endif %}
       </div>
-      {{course.description}}
+      {{course.description|safe}}
     </div>
     <span class="badge bg-info rounded-pill">{{course.credits}} credits</span>
   </li>

@@ -3,15 +3,82 @@
 {% block content %}
 
 <h1>Leistungsübersicht</h1>
+<p>Hier ist die Leistungsübersicht über Pflicht- und Wahlpflicht Module</p>
+
 <div class="progress">
   <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="{{stats["credits"]}}" aria-valuemin="0" aria-valuemax="{{stats["min_credits"]}}" style="width: {{100*stats["credits"]/stats["min_credits"]}}%">{{stats["credits"]}} von {{stats["min_credits"]}} Credits sind bereits bestanden.</div>
 </div>
-<p>Hier ist die Leistungsübersicht über Pflicht- und Wahlpflicht Module</p>
+
+<!-- Start Chart-->
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  // Variablen für die Chart
+  var categories = [];
+  var credits = [];
+
+  // Daten für die Chart
+  {% for category in category_courses %}
+  categories.push("{{category_courses[category].name}}");
+  credits.push({{ category_courses[category].category_credits }});
+  {% endfor %}
+  // Chart mit Daten und Eigentschaften erstellen
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: categories,
+      datasets: [{
+        label: 'gesammelte ECTS pro Kategorie',
+        data: credits,
+        borderWidth: 1,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(201, 203, 207, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(153, 102, 255)',
+          'rgb(201, 203, 207)'
+        ],
+      }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+        x: {
+          beginAtZero: true,
+          max: 25
+        },
+      }
+    }
+  });
+</script>
+
+<!-- Ende Chart-->
+<p>
+
 {% for category in category_courses %}
 <h2 class="mb-3">{{ category_courses[category].name}}{{" (Major)" if category_courses[category].major }}</h2>
 Es sind <b>{{category_courses[category].category_credits}}</b> credits in diese Kategorie.
 {% if category_courses[category].elective_min_credits > 0 and category_courses[category].name != "Praxistransfer" and category_courses[category].name != "Unternehmensprojekt" %}
-<span class="h5 badge badge-pill badge-primary"> min. {{category_courses[category].elective_min_credits}} Wahlpflicht credits sind notwendig</span>
+<span class="h5 badge badge-pill badge-primary"> min. {{category_courses[category].elective_min_credits}} Wahlpflicht Credits sind notwendig</span>
 {% endif %}
 {% if warning_messages[category] is defined and category_courses[category].name != "Praxistransfer" and category_courses[category].name != "Unternehmensprojekt" %}
 <div class="alert alert-warning" role="alert">
