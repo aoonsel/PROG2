@@ -89,6 +89,7 @@ def overview():
     # iteriere über alle Kategorien mit Modulen
     for category in category_courses_program:
         credits_per_category = 0
+        elective_credits_per_category = 0
         # iteriere über alle Kurse in der Kategorie
         for course in category_courses_program[category]["courses"]:
             # wenn Kurs gewählt wurde, Note vorhanden ist und bestanden, addiere Credits
@@ -99,10 +100,13 @@ def overview():
                 and course["grade"] >= 4.0
             ):
                 credits_per_category += course["credits"]
+                # wenn Kurs ein Wahlkurs ist, addiere Credits
+                if course["type"] == "elective":
+                    elective_credits_per_category += course["credits"]
         category_courses_program[category]["category_credits"] = credits_per_category
-        # verleihe Major-Titel wenn genügend Credits erreicht wurden
-        if credits_per_category >= CourseController.MAJOR_CREDITS:
-            category_courses_program[category]["major"] = True
+        # verleihe Major-Titel wenn genügend Credits erreicht wurden (5 Wahlpflichtmodule; 20 ETCS)
+        if elective_credits_per_category >= CourseController.MAJOR_CREDITS:
+            category_courses_program[category]["major"]=True
 
     stats = {
         "credits": sum_credits,
