@@ -102,28 +102,40 @@ SozialUndMethodenkompetenz:
       description: Die Studierenden erhalten eine praktische Vertiefung in den gesamten Prozess des wissenschaftlichen Arbeitens, indem sie eine erste Studienarbeit begleitend verfassen.
       type: obligatory
 
-    - name: Innovators Challenge 1 Problem to Solution (Sozial- und Methodenkompetenz)
-      code: 3319
+    - name: Innovators Challenge 1 Problem to Solution
+      code: 33190
       credits: 4
       description: keine Beschreibung vorhanden
       type: elective
  
-    - name: Innovators Challenge 2 Solution to Market (Sozial- und Methodenkompetenz)
+    - name: Innovators Challenge 2 Solution to Market
       code: 3320
       credits: 4
       description: keine Beschreibung vorhanden
       type: elective
 
-    - name: Entrepreneurial Accounting (Sozial- und Methodenkompetenz)
+    - name: Entrepreneurial Accounting
       code: 3314
       credits: 4
       description: 2 + 2 = 5 … oder die Kunst, finanzielle Entscheide gewinnbringend zu fällen und mit vorausschauender Planung die Profitabilität der Unternehmenstätigkeit zu sichern.
       type: elective
     
-    - name: The Power of Social Effekte der Social Media-Kommunikation (Sozial- und Methodenkompetenz)
+    - name: The Power of Social Effekte der Social Media-Kommunikation
       code: 3503
       credits: 4
       description: Für die Unternehmenskommunikation spielen Social Media eine immer wichtigere Rolle. Egal, ob für die Vermittlung von CSR-Aktivitäten (Corporate Social Responsibility) oder zu Marketingzwecken, über Social Media-Kanäle haben Unternehmen die Möglichkeit, heterogene Personengruppen zu erreichen. Zu diesem Zweck werden Social Media-Strategien entwickelt und ihr Erfolg mittels diverser KPIs gemessen. Während diese Kennzahlen Aufschluss darüber geben, ob Social Media-Kampagnen erfolgreich waren oder nicht, vermögen sie nicht offenzulegen, warum dies so ist. Mit genau diesem Warum setzen sich Studierende in dem Seminar auseinander. Sie erhalten einen Einblick in ausgewählte Bereiche der Medienwirkungsforschung, um psychologische Vorgänge im Rahmen der Social Media-Nutzung besser zu verstehen. Darüber hinaus werden sie ein eigenes Experiment entwickeln und durchführen. Ziel des Seminars ist es, das Wissen der Studierenden über die Wirkmechanismen von Social Media-Inhalten zu erweitern und sie dadurch zu befähigen, Inhalte strategisch und nicht nach dem Trial-and-Error-Prinzip zu entwickeln.
+      type: elective
+
+    - name: VWL-Mikroökonomie
+      code: 3504
+      credits: 4
+      description: Die volkswirtschaftlichen Rahmenbedingungen und Gesetzmässigkeiten sind zentral für die Herleitung unternehmerischer Entscheide und Strategien. Die Mikroökonomie befasst sich mit dem Funktionieren und Zusammenspiel von Märkten und Politik. Deren Kenntnisse sind eine Voraussetzung für den optimalen Einsatz knapper Ressourcen in marktwirtschaftlichen Aktivitäten und bei staatlichen Eingriffen.
+      type: elective
+
+    - name: Wahlmodul Konflikte souverän managen
+      code: 3505
+      credits: 4
+      description: Alle kennen und erleben Konflikte. Sie gehören zum Leben und doch können sie einem manchmal den Alltag und sogar das Studium erschweren. Wie schön wäre es, Konflikte besser zu verstehen, Strategien zur Konfliktbewältigung zu entwickeln oder sogar in Konfliktsituationen vermitteln zu können.  
       type: elective
  
 InformationTechnology:
@@ -198,58 +210,64 @@ InformationTechnology:
       description: Keine aktuelle Beschreibung gefunden.
       type: elective
 
-    - name: Data Science & Machine Learning (Information Technology)
+    - name: Data Science & Machine Learning
       code: 3402
       credits: 4
       description: Data Science und Machine Learning sind im Moment gefragte Themen - in diesem Kurs werden die Fähigkeiten rund um Aufbereitung, Analyse und Darstellung von Daten vertieft. Als Werkzeuge werden dabei bekannte Libraries in Python verwendet (Numpy, Pandas, Matplotlib) und an Beispieldatensätzen angewendet. Darüber hinaus werden wir Techniken kennenlernen, wie mit maschinellem Lernen aus Daten Modelle gewonnen werden können, die auch für neue Daten Vorhersagen treffen können.
       type: elective
 
-    - name: Blockchain & Distributed Ledger Technology (Information Technology)
+    - name: Blockchain & Distributed Ledger Technology
       code: 3302
       credits: 4
       description: Bitcoin, Blockchain, NFTs, Metaverse und vieles mehr - diese Begriffe sind aus den Schlagzeilen nicht mehr wegzudenken. Doch was verbirgt sich eigentlich hinter dieser Technologie? Was ist davon im aktuellen Bearmarket wirklich noch da? Und was bringt die Technologie, wenn nun jeder von künstlicher Intelligenz (KI) spricht? Wie funktioniert sie? Und welche revolutionären Anwendungsfälle sind möglich? Kann die Blockchain-Technologie unsere Welt verändern? In diesem Modul werden diese und viele andere Fragen ausführlich behandelt.
       type: elective
   
-    - name: Business Intelligence & Big Data (Information Technology)
+    - name: Business Intelligence & Big Data
       code: 3309
       credits: 4
       description: Wer Business Intelligence (BI) im Unternehmen einsetzt, hat einen klaren Wettbewerbsvorteil, denn er kann früher als alle anderen Marktvorteile identifizieren. Deshalb suchen Unternehmen verstärkt nach Experten, die in der Lage sind, aus Daten Werte zu generieren. In dem Praxisorientierten Unterricht lernen Sie die theoretischen Grundlagen von Business Intelligence (BI) und Big Data kennen und wenden sie mit Fallbeispiele im praxisorientierten Unterricht an.
       type: elective
     
-    - name: Web Scraping & Automated Content Analysis (Information Technology)
-      code: 3311
+    - name: Web Scraping & Automated Content Analysis
+      code: 3319
       credits: 4
       description: Ob Medienberichterstattung, Unternehmenskommunikation, Börsenentwicklungen oder Diskurse auf Social-Media-Kanälen, das World Wide Web hält eine Flut von Informationen bereit. Diese eröffnen theoretisch die Möglichkeit, spannende Einblicke in gesellschaftliche und politische Fragestellungen aber beispielsweise auch Marketingstrategien oder wirtschaftliche Entwicklungen zu erhalten. Doch wie können wir uns systematisch Zugang zu diesen grossen Datenmengen verschaffen? Und wie können wir sie gewinnbringend auswerten, um die für uns relevanten Fragen zu beantworten?
       type: elective
       
-    - name: Web Development (Information Technology)
+    - name: Web Development
       code: 3312
       credits: 4
       description: Web Development erlaubt die Erstellung von interaktiven Anwendungen mit Technologien des World Wide Webs - dazu zählt zum einen die Frontend-Entwicklung für browserbasierte Anwendungen, als auch die Backend-Entwicklung zur serverseitigen dynamischen Generierung von HTML-Inhalten oder zur Bereitstellung von Datenschnittstellen. In dieser Veranstaltung wird ein Überblick über Sprachen, Technologien und Vorgehensweisen der Web-Programmierung gegeben. Schwerpunkt bildet dabei das Erlernen von der Sprache Javascript und die Nutzung des Document Object Models (DOM), darüber hinaus werden bekannte Frameworks und Libraries vorgestellt (z.B jQuery, React/Vue.js), das HTTP-Protokoll genauer besprochen, verschiedene serverseitige Technologien betrachtet (z.B. node.js, Python/Flask) und Vor- und Nachteile verschiedener typischer Architekturen diskutiert (klassische Webanwendungen, Ajax, SPAs). Neben theoretischen Einheiten wird dabei vor allem auch die Praxis des Web Development in vielen Übungen erlernt.
       type: elective
 
-    - name: Entwicklung von Mixed Reality Experiences (Information Technology)
+    - name: Entwicklung von Mixed Reality Experiences
       code: 3313
       credits: 4
       description:  Im Rahmen der Veranstaltung MRE bieten wir Ihnen einen fundierten Einblick in die Erstellung von Anwendungen mit der Entwicklungsumgebung Unity im Bereich Mixed Reality. Neben etwas Theorie steht vor allem das praktische Arbeiten mit dieser modernen Technologie im Mittelpunkt.
       type: elective
 
-    - name: Internet of Things Use Case (Information Technology)
+    - name: Internet of Things Use Case
       code: 3315
       credits: 4
       description: In diesem Wahlpflichtmodul erhalten die Studierenden die Gelegenheit, projektbezogen konkrete Anwendungen im Bereich Internet of Things zu konzipieren und prototypisch umzusetzen. Ziel des Moduls ist es, praktische Erfahrungen mit neuesten Technologien zu sammeln und die Schnittstelle zwischen Internet und Alltagsgegenständen erlebbar zu machen.Nach einem kurzen Theorieinput werden Use Cases definiert, worauf die Studierenden in Gruppen selbstständig an ihren Projekten arbeiten, diese dokumentieren und Ende Semester im Plenum präsentieren.
       type: elective
 
-    - name: AI Ethics (Information Technology)
+    - name: AI Ethics
       code: 3317
       credits: 4
       description: Sind wir bereit für die Verantwortung? Taucht ein in die faszinierende Welt der KI-Ethik. Unser Seminar öffnet die Tür zu den moralischen Herausforderungen und Chancen der künstlichen Intelligenz und macht euch vertraut mit den dahinterliegenden Technologien und ihrer Funktionsweise. Erforscht die Zukunft künstlicher Intelligenz in einem selbstgewählten gesellschaftlichen Kontext (Bildungssystem und Arbeitsmarkt, Medizin und Gesundheit, Journalismus und (soziale) Medien, Sicherheit, Recht und Ordnung,…) und reflektiert kritisch, wie diese neue Technologie Bereiche unseres Lebens beeinflusst und verändert.
       type: elective   
   
-    - name: Web Development (Information Technology)
+    - name: Web Development
       code: 3502
       credits: 4
       description: Web Development erlaubt die Erstellung von interaktiven Anwendungen mit Technologien des World Wide Webs - dazu zählt zum einen die Frontend-Entwicklung für browserbasierte Anwendungen, als auch die Backend-Entwicklung zur serverseitigen dynamischen Generierung von HTML-Inhalten oder zur Bereitstellung von Datenschnittstellen. In dieser Veranstaltung wird ein Überblick über Sprachen, Technologien und Vorgehensweisen der Web-Programmierung gegeben. Schwerpunkt bildet dabei das Erlernen von der Sprache Javascript und die Nutzung des Document Object Models (DOM), darüber hinaus werden bekannte Frameworks und Libraries vorgestellt (z.B jQuery, React/Vue.js), das HTTP-Protokoll genauer besprochen, verschiedene serverseitige Technologien betrachtet (z.B. node.js, Python/Flask) und Vor- und Nachteile verschiedener typischer Architekturen diskutiert (klassische Webanwendungen, Ajax, SPAs). Neben theoretischen Einheiten wird dabei vor allem auch die Praxis des Web Development in vielen Übungen erlernt.
+      type: elective
+
+    - name: IT-Security
+      code: 35333
+      credits: 4 
+      description: In diesem Modul wird die Informationssicherheit aus verschiedenen Blickwinkeln und mit Themenschwerpunkten vermittelt. Dabei wird die Informationssicherheit insbesondere aus Sicht eines Unternehmens betrachtet, um ein Verständnis zu erhalten, was Unternehmen benötigen, um sich angemessen zu schützen
       type: elective
 
 User Experience:
@@ -294,30 +312,43 @@ User Experience:
       description: Für erfolgreiche interaktive Systeme (z.B. Website, Software, Consumer Electronics) ist es essentiell, dass diese nicht nur technischen Ansprüchen genügen, sondern auch auf die Bedürfnisse von Anwendern zugeschnitten sind. Hierfür muss während der Entwicklung das gesamte Anforderungsspektrum berücksichtigt werden. Der Nutzungskontext spielt dabei ebenso eine Rolle wie kulturelle Faktoren. Für die nutzerzentrierte Entwicklung sind daher interdisziplinäre Fähigkeiten (z.B. Informatik, Design, Psychologie) erforderlich. Der Kurs behandelt die Grundlagen des User-Centered-Designs (UCD) sowie dem Usability Engineering, wobei der Fokus auf Evaluationen liegt. Neben einer Einführung in die Entstehung dieser Fachgebiete werden Grundlagen der Kognitionspsychologie sowie von Lerntheorien behandelt. Daneben werden die Elemente einer Nutzungskontextanalyse (Aufgaben, Nutzereigenschaften, Umgebung) behandelt sowie entsprechend geeignete Erhebungsformen. Darauf aufbauend werden ausgewählte Usability-Evaluationsmethoden vorgestellt und deren Stärken und Schwächen aufgezeigt. In Ergänzung hierzu wird das Thema „Accessibility“ behandelt.
       type: obligatory
 
-    - name: Eye Tracking (User Experience)
+    - name: Eye Tracking
       code: 3501
       credits: 4
       description: Eye Tracking, also die Aufzeichnung und Analyse von Augenbewegungen und Fixationen, findet mehr und mehr Anwendung in der Wirtschaft und der Forschung. Mit Hilfe von Eye Tracking lassen sich beispielsweise Lesestrategien im Bereich des Software Engineering, das Kauf- und  Kundenverhalten im Bereich Marketing oder das Blick- und Steuerungsverhalten im Bereich Automobile untersuchen. Im Bereiche User Experience (UX) und Usability werden durch Tests mit Nutzerinnen und Nutzern die Benutzbarkeit von Anwendungen überprüft und konzeptionelle oder designspezifische Mängel identifiziert. Die Datenaufnahme mit Hilfe von Eye Trackern, die Datenanalyse und die Datenvisualisierung spielen dabei eine entscheidende Rolle.
       type: elective
 
-    - name: Future Trends in Human-Computer Interaction (User Experience)
+    - name: Future Trends in Human-Computer Interaction
       code: 3306
       credits: 4
       description: Das Forschungsgebiet der Mensch-Computer-Interaktion ist aufgrund konstanter technischer Innovationen von einem stetigen Wandel geprägt. Durch diesen entstehen neuartige interaktive Systeme deren Form der Interaktion die traditionelle Bedienung von grafischen Benutzeroberflächen (GUI) erweitert.
       type: elective
  
-    - name: User Experience in Unternehmen (User Experience)
+    - name: User Experience in Unternehmen
       code: 3307
       credits: 4
       description: https://tube.switch.ch/videos/lp0f28YVnH
       type: elective
 
-    - name: Search Engine Optimization (User Experience)
+    - name: Search Engine Optimization
       code: 3303
       credits: 4
       description:  In Zeiten von KI, Google Bard und ChatGPT wird das Internet jeden Tag regelrecht geflutet mit mittelmässigem Content. Um da die Oberhand zu behalten und in den Suchergebnissen sichtbar zu sein, muss man verstehen, wie Google die Auswahl der besten Websites überhaupt trifft. Was Google sagt und was die Daten zeigen, ist oftmals nicht dasselbe. Suchmaschinenoptimierung (Search Engine Optimization) beschreibt das Handwerk, mittels genauer Analysen und zielgerichteter Massnahmen OnPage, OffPage und technisch bei Google auf Platz 1 zu landen. Wie führt man eine Analyse der eigenen Website durch? Wie konzeptioniert und plant man eine neue Seite, damit sie SEO-Kriterien gerecht wird? Wie erkennt und behebt man Fehler – bevor das Ranking darunter leidet? Welches sind die grössten Hebel, welches die unterschätzten Sweet Spots,  die die Konkurrenz ziemlich sicher (noch) nicht macht? Wie erstellt man die «beste Seite» zu einem bestimmten Thema, und wie findet man überhaupt heraus, was in einer bestimmten Branche verlangt sein könnte? Wer sich für das Wahlpflichtfach «SEO» einschreibt, lernt erprobte Strategien kennen, die eigene Website optimiert zu bauen oder so zu verbessern, dass sie den «Google-Standard» der Branche setzt – und damit Sichtbarkeit und Klicks gewinnt. Neben theoretischem Input wirst du auch selbst Hand anlegen können, Analysen durchführen und grafisch aufbereiten, Strategien erstellen und auf Fehlersuche gehen. Geleitet wird das Modul von Gabi Troxler, Content- und SEO-Expertin mit jahrelanger Erfahrung in umkämpften Branchen wie Banken und Versicherungen bis hin zum eigenen erfolgreichen E-Commerce-Unternehmen.
       type: elective
- 
+
+    - name: Markenführung und die ICH-Marke
+      code: 3311
+      credits: 4
+      description: Die Studierenden lernen Zusammenhänge von Marke, Strategie und Kommunikation besser zu verstehen, damit sie diese Erkenntnisse bei der Erstellung und Konzeption der eigenen ICH-Marke heranziehen können. Ziel ist es, dass sie sich bei der Gestaltung ihrer persönlichen Laufbahn kritisch und konstruktiv mit den gelernten Inhalten auseinandersetzen können.
+      type: elective
+
+    - name: Digital Storytelling 
+      code: 3310
+      credits: 4
+      description: The goal of this module is to learn how to combine the timeless art of storytelling with the contemporaneous forms, tools and techniques of the digital era. Students will apply their own intuition and creativity to the use of writing, storyboarding, photo shooting, and software for photo editing, video and audio shooting and editing.
+      type: elective
+
+
 Digital Innovation:
   name: Digital Innovation
   # elective_min_credits: 24 Pflicht und mind. 8 Wahl
@@ -406,13 +437,13 @@ Digital Innovation:
       type: elective
       description: Unter dem Begriff Agilität wird heutzutage mehr verstanden als die Anwendung von SCRUM für die Softwareentwicklung. Agile Arbeitsweise ist in modernen Unternehmen Teil des Alltags. Doch die Anwendung agiler Praktiken allein sorgt noch nicht für unternehmerische Agilität. In diesem Wahlpflichtmodul erarbeiten sich die Teilnehmenden die Schwerpunkte "Being Agile" (u.a. Mindset, Verhalten) & "Doing Agile" (u.a. Arbeits- und Organisationsformen) aus verschiedenen Perspektiven. Sie setzen sich mit den konzeptionellen Grundlagen anhand konkreter Beispiele aus dem Praxisalltag auseinander und erlernen und erleben diese direkt in verschiedenen Anwendungsformen. Zahlreiche Impulsreferate geben den Teilnehmenden Einblicke in agile Arbeitsformen und Erfahrungen aus der Unternehmenspraxis.
  
-    - name: Digital Lead Generation-Lab (Digital Innovation)
+    - name: Digital Lead Generation-Lab
       code: 1035
       credits: 4
       description: Keine aktuelle Beschreibung gefunden.
       type: elective
     
-    - name: SaaS Management (Digital Innovation)
+    - name: SaaS Management
       code: 3301
       credits: 4
       description: Keine aktuelle Beschreibung gefunden. 
@@ -435,37 +466,47 @@ Digital Innovation:
         - Begrifflichkeiten aus dem SaaS Umfeld zu beurteilen
       type: elective
     
-    - name: Agile and New Ways of Work  (Digital Innovation)
+    - name: Agile and New Ways of Work
       code: 3401
       credits: 4
       description: unter den Begriffen Agilität und New Ways of Work wird heutzutage mehr verstanden als die Anwendung von SCRUM für die Softwareentwicklung oder home office und remote work. In diesem Wahlpflichtmodul werden theoretische, methodische und praktische Kompetenzen vermittelt, die in den Schwerpunkten Agile Being, Agile Teams, Agile Systeme sowie Veränderungen der Arbeitsformen (New ways of Work) zusammengefasst werden. Einen Modulschwerpunkt bilden zwei Tage Firmenbesuche bei mehreren Unternehmen, die Agilität und neue Arbeitsformen praktizieren. An diesen Tagen besteht Präsenzpflicht. Studierende erhalten so Einblicke in agile Arbeitsformen in der Unternehmenspraxis.
       type: elective
     
-    - name: Supply Chain Management im Handel (Digital Innovation)
+    - name: Supply Chain Management im Handel
       code: 3305
       credits: 4
       description: Handelsunternehmen sind das Bindeglied zwischen Produzierenden und Konsumierenden und nehmen damit eine zentrale Rolle in unserer Wirtschaft ein. Unternehmen wie Walmart, Amazon oder IKEA zählen zu den grössten Unternehmen der Welt und in der Schweiz sind neben den stationären Handelsunternehmen wie Migros, Coop, Aldi und Lidl auch online Händler wie Digitec Galaxus oder Brack omnipräsent.
       type: elective
 
-    - name: Datenschutzrecht und Copyright in der Praxis (Digital Innovation)
+    - name: Datenschutzrecht und Copyright in der Praxis
       code: 3308
       credits: 4
       description: My Start Up - Wie plane ich rechtlich meine Selbständigkeit?
       type: elective
-    - name: Leadership Skills für die Digitale Transformation (Digital Innovation)
-      code: 3310
+    - name: Leadership Skills für die Digitale Transformation
+      code: 33101
       credits: 4
       description: Leadership wird oft als undefinierbare Kunst gesehen - entweder man kann es, oder halt nicht. Das Modul "Leadership Skills für die Digitale Transformation" zeigt, dass Leadership durchaus gelernt werden kann (muss) und hilft bei der Entwicklung von persönlichen Führungsfähigkeiten. Weiter lernst du, wie du dein digitales Team oder Projekt effektiv durch Veränderungen führst. Der zweite Teil des Moduls (2 Tage) wird in Amsterdam stattfinden. Wir besuchen dort Start-ups und grössere Unternehmen. Weiter widmen wir uns wichtigen Themen wie Diversität und interkulturelle Kompetenzen und behandeln diese praxisnah. 
       type: elective
-    - name: Strategic Foresight (Digital Innovation)
+    - name: Strategic Foresight
       code: 3316
       credits: 4
       description: Datafizierung, Individualisierung, künstliche Intelligenz. Um eine erfolgreiche unternehmerische Zukunft im digitalen Zeitalter zu gestalten, ist es unerlässlich, über die Entwicklungen im Makroumfeld eines Unternehmens informiert zu sein. Gerade in einer globalisierten Welt, die durch zunehmende Komplexität und sich ständig verändernde Märkte und Branchen gekennzeichnet ist, ist Wissen über kulturelle, technologische und wirtschaftliche Trends unverzichtbar und die Grundlage für sinnvolle strategische Entscheidungsprozesse.
       type: elective
-    - name: Junior Swiss Agency Award (Digital Innovation)
+    - name: Junior Swiss Agency Award
       code: 3318
       credits: 4
       description: Der Leading Swiss Agency (LSA) Junior Agency Award ist ein anspruchsvoller Hochschulwettbewerb für High Potentials in der Marketingkommunikation. Studierende von verschiedenen Schweizer Hochschulen arbeiten während eines Semesters in Teams an einer Kampagne für einen realen Kunden und treten mit den eigenen Konzepten gegeneinander an. Sie werden dabei durch Coaches aus den LSA-Agenturen begleitet. Sie lernen so am praktischen Beispiel mit Kundenanforderungen, Kreativität und Budgetvorgaben zu arbeiten und erhalten Einblick in die Agenturwelt. Die Arbeiten aller Teams werden zunächst im FHGR-internen Pitch präsentiert und durch interne und externe Experten bewertet. Das beste Team wird das eigene Konzept an der Award-Night präsentierten und die FHGR im Wettbewerb mit den anderen Hochschulen vertreten dürfen.
+      type: elective
+    - name:
+      code: 331666
+      credits: 4 
+      description: |
+        The students
+          − learn the basics of strategy work in the context of the ongoing digital transformation
+          − gain experience in analysing and advising companies
+          − can recognise how digitalization changes in fundamental business processes
+          − recognise strategic optimisation potential against the backdrop of digitalisation
       type: elective
 
 Wahlmodule:
